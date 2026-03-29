@@ -24,39 +24,44 @@ export default function HomePage({ onNavigate }) {
   return (
     <div className={styles.container}>
       
-      {/* HERO SECTION */}
+           {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.heroEyebrow}>
             <span className={styles.heroBadge}>New Season 2024</span>
             <span>✦ Free shipping on orders $50+</span>
           </div>
-
           <h1 className={styles.heroTitle}>
             Shop <em>Smarter</em>,<br />Live Better
           </h1>
-
           <p className={styles.heroDesc}>
-            Discover our curated collection of premium essentials.
+            Discover our curated collection of premium essentials — from cutting‑edge electronics to timeless accessories and cozy home goods.
           </p>
-
           <div className={styles.heroActions}>
-            <button
-              className="btn btn-primary btn-lg"
-              onClick={() => onNavigate('products')}
-            >
+            <button className="btn btn-primary btn-lg" onClick={() => onNavigate('products')}>
               Shop Now →
             </button>
-
-            <button
-              className="btn btn-secondary btn-lg"
-              onClick={() => onNavigate('about')}
-            >
+            <button className="btn btn-secondary btn-lg" onClick={() => onNavigate('about')}>
               Our Story
             </button>
           </div>
+          <div className={styles.heroStats}>
+            <div><div className={styles.statNum}>12,000+</div><div>Happy Customers</div></div>
+            <div><div className={styles.statNum}>500+</div><div>Products</div></div>
+            <div><div className={styles.statNum}>4.9★</div><div>Average Rating</div></div>
+          </div>
+        </div>
+        <div className={styles.heroImages}>
+          <div className={styles.imgTall}>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=600&fit=crop" alt="Watch" />
+          </div>
+          <div className={styles.imgStack}>
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=280&fit=crop" alt="Headphones" />
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=220&fit=crop" alt="Coffee" />
+          </div>
         </div>
       </section>
+
 
       {/* CATEGORY SECTION */}
       <section className={styles.section}>
