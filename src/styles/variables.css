@@ -1,0 +1,25 @@
+:root {
+  /* Colors */
+  --cream: #FAF7F2;
+  --sand: #F0EAE0;
+  --tan: #D4C5B0;
+  --brown: #8B6E52;
+  --dark: #1A1612;
+  --text: #3D2E22;
+  --muted: #7A6A5A;
+  --accent: #C4622D;
+  --accent-light: #F5D5C3;
+  --green: #2D6A4F;
+  --white: #FFFFFF;
+  
+  /* Shadows */
+  --shadow: 0 4px 24px rgba(26, 22, 18, 0.08);
+  --shadow-lg: 0 12px 48px rgba(26, 22, 18, 0.14);
+  
+  /* Border Radius */
+  --radius: 12px;
+  --radius-sm: 8px;
+  
+  /* Transitions */
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}

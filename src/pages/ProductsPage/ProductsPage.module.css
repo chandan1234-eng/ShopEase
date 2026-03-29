@@ -1,0 +1,128 @@
+.container {
+  animation: fadeIn 0.4s ease;
+}
+.pageHeader {
+  background: var(--sand);
+  padding: 40px 5%;
+}
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.breadcrumb span {
+  cursor: pointer;
+}
+.breadcrumb span:hover {
+  color: var(--accent);
+}
+.filtersBar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 24px 5%;
+  background: var(--white);
+  border-bottom: 1px solid var(--sand);
+}
+.filterBtn {
+  padding: 8px 18px;
+  border: 1.5px solid var(--tan);
+  border-radius: 40px;
+  background: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.filterBtn:hover,
+.filterBtn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+}
+.rightFilters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+.searchInput {
+  padding: 9px 16px;
+  border: 1.5px solid var(--tan);
+  border-radius: 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  background: var(--white);
+  color: var(--text);
+  outline: none;
+  width: 200px;
+  transition: all var(--transition);
+}
+.searchInput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+.sortSelect {
+  padding: 9px 16px;
+  border: 1.5px solid var(--tan);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--white);
+  outline: none;
+  cursor: pointer;
+}
+.productsSection {
+  padding: 60px 5%;
+}
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+.loadingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+.errorBanner {
+  background: #FFF0F0;
+  color: #D62828;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  margin: 20px;
+  border: 1px solid #FCCACA;
+}
+.emptyState {
+  text-align: center;
+  padding: 60px 0;
+}
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .filtersBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .rightFilters {
+    margin-left: 0;
+    justify-content: space-between;
+  }
+  .searchInput {
+    width: 100%;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

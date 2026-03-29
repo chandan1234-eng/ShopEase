@@ -1,0 +1,200 @@
+// Mock product data (original from the app)
+export const MOCK_PRODUCTS = [
+  {
+    id: 1,
+    name: "Wireless Noise-Cancelling Headphones",
+    price: 79.99,
+    originalPrice: 129.99,
+    category: "Electronics",
+    rating: 4.8,
+    reviews: 312,
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+    badge: "Best Seller",
+    description:
+      "Premium sound quality with 30-hour battery life and active noise cancellation. Perfect for work and travel.",
+  },
+  {
+    id: 2,
+    name: "Minimalist Leather Watch",
+    price: 149.99,
+    originalPrice: 199.99,
+    category: "Accessories",
+    rating: 4.7,
+    reviews: 189,
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop",
+    badge: "New",
+    description:
+      "Handcrafted genuine leather strap with a clean dial design. Water-resistant to 50m.",
+  },
+  {
+    id: 3,
+    name: "Ergonomic Mechanical Keyboard",
+    price: 89.99,
+    originalPrice: 109.99,
+    category: "Electronics",
+    rating: 4.6,
+    reviews: 241,
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&h=400&fit=crop",
+    badge: "Sale",
+    description:
+      "Tactile Cherry MX switches with RGB backlighting. Full N-key rollover for gamers and typists.",
+  },
+  {
+    id: 4,
+    name: "Ceramic Pour-Over Coffee Set",
+    price: 45.99,
+    originalPrice: 59.99,
+    category: "Home",
+    rating: 4.9,
+    reviews: 98,
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop",
+    badge: "Top Rated",
+    description:
+      "Handmade ceramic dripper and server set. Brew café-quality coffee at home every morning.",
+  },
+  {
+    id: 5,
+    name: "Slim Crossbody Bag",
+    price: 59.99,
+    originalPrice: 79.99,
+    category: "Accessories",
+    rating: 4.5,
+    reviews: 156,
+    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop",
+    badge: null,
+    description:
+      "Compact yet spacious design with RFID-blocking pockets. Vegan leather in multiple colors.",
+  },
+  {
+    id: 6,
+    name: "Smart Fitness Tracker",
+    price: 99.99,
+    originalPrice: 139.99,
+    category: "Electronics",
+    rating: 4.4,
+    reviews: 427,
+    image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=400&h=400&fit=crop",
+    badge: "Sale",
+    description:
+      "Track steps, heart rate, sleep, and workouts. 7-day battery with swim-proof design.",
+  },
+  {
+    id: 7,
+    name: "Linen Throw Blanket",
+    price: 39.99,
+    originalPrice: 54.99,
+    category: "Home",
+    rating: 4.8,
+    reviews: 73,
+    image: "https://images.unsplash.com/photo-1559181567-c3190bded0ea?w=400&h=400&fit=crop",
+    badge: null,
+    description:
+      "100% natural linen, pre-washed for softness. Breathable for all seasons.",
+  },
+  {
+    id: 8,
+    name: "Portable Bluetooth Speaker",
+    price: 64.99,
+    originalPrice: 84.99,
+    category: "Electronics",
+    rating: 4.6,
+    reviews: 298,
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop",
+    badge: "Best Seller",
+    description:
+      "360° sound with 12-hour playback. Waterproof and drop-proof for outdoor adventures.",
+  },
+  {
+    id: 9,
+    name: "Bamboo Desk Organizer",
+    price: 29.99,
+    originalPrice: 39.99,
+    category: "Home",
+    rating: 4.3,
+    reviews: 61,
+    image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&h=400&fit=crop",
+    badge: null,
+    description:
+      "Eco-friendly bamboo with 6 compartments. Keep your desk tidy and stylish.",
+  },
+  {
+    id: 10,
+    name: "Canvas Backpack",
+    price: 74.99,
+    originalPrice: 99.99,
+    category: "Accessories",
+    rating: 4.7,
+    reviews: 203,
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop",
+    badge: "New",
+    description:
+      "15L waxed canvas backpack with laptop compartment. Built for daily commuters.",
+  },
+  {
+    id: 11,
+    name: "Succulent Plant Set",
+    price: 24.99,
+    originalPrice: 32.99,
+    category: "Home",
+    rating: 4.9,
+    reviews: 44,
+    image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&h=400&fit=crop",
+    badge: null,
+    description:
+      "Set of 3 low-maintenance succulents in ceramic pots. Perfect desk companions.",
+  },
+  {
+    id: 12,
+    name: "Vintage Sunglasses",
+    price: 34.99,
+    originalPrice: 49.99,
+    category: "Accessories",
+    rating: 4.5,
+    reviews: 88,
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&h=400&fit=crop",
+    badge: "Sale",
+    description:
+      "UV400 polarized lenses in a retro acetate frame. Style meets protection.",
+  },
+];
+
+export const CATEGORIES = ["All", "Electronics", "Accessories", "Home"];
+
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: "Sarah K.",
+    avatar: "SK",
+    rating: 5,
+    text: "ShopEase has the best curated selection I've found. Fast shipping and beautiful packaging every time!",
+  },
+  {
+    id: 2,
+    name: "Marcus T.",
+    avatar: "MT",
+    rating: 5,
+    text: "The product quality is unmatched at these prices. I've ordered 6 times and never been disappointed.",
+  },
+  {
+    id: 3,
+    name: "Aisha R.",
+    avatar: "AR",
+    rating: 5,
+    text: "Customer service went above and beyond when I had an issue. Truly a company that cares.",
+  },
+  {
+    id: 4,
+    name: "James L.",
+    avatar: "JL",
+    rating: 4,
+    text: "Clean website, easy checkout, great products. ShopEase is my go-to for gifts.",
+  },
+];
+
+export const FAQS = [
+  { q: "How long does shipping take?", a: "Standard shipping takes 3-5 business days. Express shipping (1-2 days) is available at checkout." },
+  { q: "What is your return policy?", a: "We offer a 30-day hassle-free return policy. Items must be unused and in original packaging." },
+  { q: "Is my payment information secure?", a: "Yes! We use SSL encryption and never store your card details. Payments are processed by Stripe." },
+  { q: "Do you offer international shipping?", a: "Yes, we ship to 40+ countries. International shipping rates and times vary by destination." },
+  { q: "Can I track my order?", a: "Absolutely! Once shipped, you'll receive a tracking number via email to monitor your delivery." },
+];
