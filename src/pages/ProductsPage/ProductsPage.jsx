@@ -1,3 +1,4 @@
+// ProductsPage – displays all products with filtering, sorting, and search
 import { useState, useEffect, useMemo } from 'react';
 import useFetchProducts from '../../hooks/useFetchProducts';
 import ProductCard from '../../components/ProductCard/ProductCard';
@@ -9,20 +10,22 @@ import styles from './ProductsPage.module.css';
 const CATEGORIES = ['All', 'Electronics', 'Accessories', 'Home'];
 
 export default function ProductsPage({ onNavigate, params }) {
+  // Fetch products from API (or fallback mock data)
   const { data: allProducts = [], loading, error } = useFetchProducts();
 
+  // UI state for filters and sorting
   const [category, setCategory] = useState('All');
   const [sort, setSort] = useState('default');
   const [searchTerm, setSearchTerm] = useState(params?.search || '');
 
-  // Sync search from navbar
+  // Sync search term when navigating from Navbar
   useEffect(() => {
     if (params?.search !== undefined) {
       setSearchTerm(params.search);
     }
   }, [params?.search]);
 
-  // Optimized filtering + sorting
+  // Memoized filtered and sorted products
   const filtered = useMemo(() => {
     let result = [...allProducts];
 
@@ -31,7 +34,7 @@ export default function ProductsPage({ onNavigate, params }) {
       result = result.filter((p) => p.category === category);
     }
 
-    // Search filter
+    // Search filter (case‑insensitive)
     if (searchTerm) {
       result = result.filter((p) =>
         p.name?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -50,6 +53,7 @@ export default function ProductsPage({ onNavigate, params }) {
     return result;
   }, [allProducts, category, searchTerm, sort]);
 
+  // Reset all filters to default
   const clearFilters = () => {
     setCategory('All');
     setSearchTerm('');
@@ -58,7 +62,7 @@ export default function ProductsPage({ onNavigate, params }) {
 
   return (
     <div className={styles.container}>
-      {/* Header */}
+      {/* Page header with breadcrumb */}
       <div className={styles.pageHeader}>
         <div className={styles.breadcrumb}>
           <span onClick={() => onNavigate('home')}>Home</span> ›
@@ -68,15 +72,15 @@ export default function ProductsPage({ onNavigate, params }) {
         <p>{filtered.length} products available</p>
       </div>
 
-      {/* Filters */}
+      {/* Filter bar */}
       <div className={styles.filtersBar}>
-        {CATEGORIES.map((c) => (
+        {CATEGORIES.map((cat) => (
           <button
-            key={c}
-            className={`${styles.filterBtn} ${category === c ? styles.active : ''}`}
-            onClick={() => setCategory(c)}
+            key={cat}
+            className={`${styles.filterBtn} ${category === cat ? styles.active : ''}`}
+            onClick={() => setCategory(cat)}
           >
-            {c}
+            {cat}
           </button>
         ))}
 
@@ -87,7 +91,6 @@ export default function ProductsPage({ onNavigate, params }) {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-
           <select
             className={styles.sortSelect}
             value={sort}
@@ -101,21 +104,21 @@ export default function ProductsPage({ onNavigate, params }) {
         </div>
       </div>
 
-      {/* Products Section */}
+      {/* Products section */}
       <section className={styles.productsSection}>
-        {/* Loading */}
+        {/* Loading state – skeleton placeholders with stable keys */}
         {loading && (
           <div className={styles.loadingGrid}>
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="skeleton skeleton-card" />
+              <div key={`skeleton-${i}`} className="skeleton skeleton-card" />
             ))}
           </div>
         )}
 
-        {/* Error */}
+        {/* Error message */}
         {error && <div className={styles.errorBanner}>⚠️ {error}</div>}
 
-        {/* Empty State */}
+        {/* Empty state – no products match filters */}
         {!loading && !error && filtered.length === 0 && (
           <div className={styles.emptyState}>
             <div className={styles.emptyIcon}>🔍</div>
@@ -127,13 +130,13 @@ export default function ProductsPage({ onNavigate, params }) {
           </div>
         )}
 
-        {/* Products Grid */}
+        {/* Product grid – unique key using id + index */}
         {!loading && !error && filtered.length > 0 && (
           <div className={styles.productGrid}>
-            {filtered.map((p) => (
+            {filtered.map((product, index) => (
               <ProductCard
-                key={p.id}
-                product={p}
+                key={`${product.id}-${index}`}
+                product={product}
                 onNavigate={onNavigate}
               />
             ))}
@@ -141,7 +144,7 @@ export default function ProductsPage({ onNavigate, params }) {
         )}
       </section>
 
-      {/* Sections */}
+      {/* Reusable sections */}
       <FeaturesSection />
       <NewsletterSection />
       <FAQSection />
