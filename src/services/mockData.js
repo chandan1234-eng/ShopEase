@@ -86,7 +86,7 @@ export const MOCK_PRODUCTS = [
     category: "Home",
     rating: 4.8,
     reviews: 73,
-    image: "https://images.unsplash.com/photo-1559181567-c3190bded0ea?w=400&h=400&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1670512215279-7bbb677d52de?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     badge: null,
     description:
       "100% natural linen, pre-washed for softness. Breathable for all seasons.",
@@ -156,8 +156,8 @@ export const MOCK_PRODUCTS = [
     description:
       "UV400 polarized lenses in a retro acetate frame. Style meets protection.",
   },
-];
-
+]
+  
 export const CATEGORIES = ["All", "Electronics", "Accessories", "Home"];
 
 export const TESTIMONIALS = [
