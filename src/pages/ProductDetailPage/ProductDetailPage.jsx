@@ -19,9 +19,10 @@ export default function ProductDetailPage({ productId, onNavigate }) {
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
 
+  // Fix: Convert both IDs to string for reliable matching
   useEffect(() => {
     if (!productsLoading && products.length) {
-      const found = products.find((p) => p.id === productId);
+      const found = products.find((p) => String(p.id) === String(productId));
       setProduct(found || null);
     }
   }, [products, productsLoading, productId]);
